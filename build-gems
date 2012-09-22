@@ -46,6 +46,7 @@ do
   extra_args="-d 'ruby(rubygems)' -d 'ruby(abi) = 1.8'  $extra_args"
   if [[ x$RETVAL == 'x' || $RETVAL == 0 ]]; then
     eval fpm -t rpm -s gem -a noarch $extra_args $basename
+    eval fpm -t deb -s gem -a noarch $extra_args $basename
     RETVAL=$?
   fi;
 
