@@ -1,7 +1,7 @@
 fpm
 mysql
-sqlite3::--provides "rubygem(sqlite3-ruby)" --depends "sqlite >= 3.6.16"
-sqlite3-ruby
+sqlite3::--provides "rubygem(sqlite3)" --depends "sqlite >= 3.6.16"
+sqlite3
 hiera
 hiera-puppet
 puppet-lint
