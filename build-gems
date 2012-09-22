@@ -47,7 +47,7 @@ do
   if [[ x$RETVAL == 'x' || $RETVAL == 0 ]]; then
     eval fpm -t rpm -s gem -a noarch $extra_args $basename
     eval fpm -t deb -s gem -a noarch $extra_args $basename
-    RETVAL=$?
+:X
   fi;
 
 	echo "$prefix Build of $basename returned with $RETVAL"
@@ -57,12 +57,12 @@ do
 	cd ../
 done < <(cat $TARGET| grep -v '^#' | grep -v '^$' )
 
-if [ -d ARTEFACTS ]
+if [ -d artifacts ]
 then
-    rm -rf ARTEFACTS
+    rm -rf artifacts
 fi
-mkdir ARTEFACTS
-mv BUILD/*.rpm ARTEFACTS
+mkdir artifacts
+mv BUILD/*.rpm artifacts
 rm -rf BUILD
 
 if [ -f failed.txt ]; then
