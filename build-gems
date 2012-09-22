@@ -61,8 +61,10 @@ if [ -d artifacts ]
 then
     rm -rf artifacts
 fi
-mkdir artifacts
-mv BUILD/*.rpm artifacts
+mkdir -p artifacts/rpm
+mkdir -p artifacts/deb
+mv BUILD/*.rpm artifacts/rpm
+mv BUILD/*.deb artifacts/deb
 rm -rf BUILD
 
 if [ -f failed.txt ]; then
